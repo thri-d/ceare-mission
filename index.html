@@ -9,9 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f7f7f5; --paper:#ffffff; --ink:#1b2333; --text:#3a4356; --muted:#6b7385; --line:#e3e5ea;
-    --navy:#1f3864; --navy-2:#2b4a80; --tint:#eef2f8;
-    --t1:#2f5d9c; --t2:#6a4c93; --t3:#2f7d5b; --t4:#b0682a;
+    --bg:#ffffff; --paper:#ffffff; --ink:#111827; --text:#374151; --muted:#6b7280; --line:#e5e7eb;
+    --navy:#1e2a5e; --navy-2:#2d3c80; --tint:#f1f4fb;
+    --t1:#2563eb; --t2:#7c3aed; --t3:#059669; --t4:#ea580c;
+    --t1s:#eff6ff; --t2s:#f5f3ff; --t3s:#ecfdf5; --t4s:#fff7ed;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -20,13 +21,20 @@
   .wrap{max-width:980px;margin:0 auto;padding:0 20px}
 
   /* Top bar */
-  .bar{background:var(--navy);color:#fff}
+  .bar{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50}
   .bar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:52px;gap:12px;flex-wrap:wrap}
   .bar b{font-weight:600;letter-spacing:.02em}
   .bar span{font-size:13px;opacity:.85}
+  .bar .right{display:flex;align-items:center;gap:14px}
+  .timer{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 5px 4px 14px}
+  .timer #tt{font-weight:700;font-size:16px;letter-spacing:.04em;font-variant-numeric:tabular-nums;min-width:48px;opacity:1}
+  .timer button{font:inherit;font-size:12px;font-weight:700;color:var(--navy);background:#fff;border:0;border-radius:999px;padding:5px 12px;cursor:pointer;-webkit-appearance:none;appearance:none}
+  .timer.low{background:#dc2626;border-color:#dc2626}
+  @media (max-width:520px){.bar .right span.note{display:none}}
 
   /* Hero */
-  .hero{background:var(--paper);border-bottom:1px solid var(--line);padding:44px 0 36px}
+  .hero{background:linear-gradient(120deg,#eef4ff 0%,#f5f0ff 45%,#ecfdf5 100%);border-bottom:1px solid var(--line);padding:48px 0 40px}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--t1),var(--t2),var(--t3));-webkit-background-clip:text;background-clip:text;color:transparent}
   .kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
   h1{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-weight:700;color:var(--ink);font-size:44px;line-height:1.1;margin:0 0 12px}
   .hero p.lead{font-size:18px;max-width:660px;margin:0}
@@ -34,11 +42,13 @@
   section{padding:36px 0 8px}
   h2{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;color:var(--ink);font-size:28px;line-height:1.2;margin:0 0 6px}
   .sub{color:var(--muted);margin:0 0 20px}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 1px 2px rgba(17,24,39,.04),0 6px 18px rgba(17,24,39,.06)}
 
   /* Steps */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;list-style:none;margin:0;padding:0}
-  .steps li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .steps li{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 1px 2px rgba(17,24,39,.04),0 6px 18px rgba(17,24,39,.06)}
+  .steps li:nth-child(1) .num{background:var(--t1)} .steps li:nth-child(2) .num{background:var(--t2)}
+  .steps li:nth-child(3) .num{background:var(--t3)} .steps li:nth-child(4) .num{background:var(--t4)}
   .num{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:14px;margin-bottom:10px}
   .steps h3{margin:0 0 4px;font-size:16px;color:var(--ink)}
   .steps p{margin:0;font-size:14.5px}
@@ -54,7 +64,8 @@
 
   /* Roles */
   .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .role{border-top:3px solid var(--navy)}
+  .role{border-top:4px solid var(--navy)}
+  .roles .role:nth-child(1){border-top-color:var(--t1)} .roles .role:nth-child(2){border-top-color:var(--t2)} .roles .role:nth-child(3){border-top-color:var(--t3)}
   .role h3{margin:0 0 4px;font-size:17px;color:var(--ink)}
   .role p{margin:0;font-size:15px}
 
@@ -65,14 +76,18 @@
   .tab:focus-visible{outline:3px solid #9db4d9;outline-offset:2px}
   .tab .tn{color:var(--muted);font-weight:500;margin-right:6px}
   .tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .tab[data-m="1"].active{background:var(--t1);border-color:var(--t1)} .tab[data-m="2"].active{background:var(--t2);border-color:var(--t2)}
+  .tab[data-m="3"].active{background:var(--t3);border-color:var(--t3)} .tab[data-m="4"].active{background:var(--t4);border-color:var(--t4)}
+  .tab.active .tn{color:rgba(255,255,255,.8)}
   .tab.active .tn{color:#c9d5ea}
   .mission{border-left:5px solid var(--c);margin-bottom:16px}
+  .mission .ptop{background:var(--cs)} .mission .ptop span{color:var(--c)} .mission .copy{background:var(--c)}
   .mission .label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin:0 0 4px}
   .mission h3{font-family:"Source Serif 4",Georgia,serif;font-size:24px;color:var(--ink);margin:0 0 6px}
   .mission .goal{margin:0 0 18px;font-size:16px}
   .do{margin:0 0 18px;padding-left:20px}
   .do li{margin:4px 0}
-  .m1{--c:var(--t1)} .m2{--c:var(--t2)} .m3{--c:var(--t3)} .m4{--c:var(--t4)}
+  .m1{--c:var(--t1);--cs:var(--t1s)} .m2{--c:var(--t2);--cs:var(--t2s)} .m3{--c:var(--t3);--cs:var(--t3s)} .m4{--c:var(--t4);--cs:var(--t4s)}
   .js .mission{display:none}
   .js .mission.show{display:block}
 
@@ -82,7 +97,7 @@
   .ptop span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
   .copy{font:inherit;font-size:13px;font-weight:600;color:#fff;background:var(--navy);border:0;border-radius:6px;padding:6px 14px;cursor:pointer;-webkit-appearance:none;appearance:none}
   .copy:hover{background:var(--navy-2)}
-  .copy.done{background:var(--t3)}
+  .copy.done,.mission .copy.done{background:#16a34a}
   .ptext{margin:0;padding:14px 16px;font-family:inherit;font-size:14.5px;line-height:1.6;color:var(--ink);white-space:pre-wrap;word-wrap:break-word}
 
   .auditor{border-left:5px solid var(--navy)}
@@ -118,11 +133,11 @@
 </head>
 <body>
 
-<div class="bar"><div class="wrap"><b>CEARE Lab &middot; Mission Control</b><span>Practice case. All data is fictional.</span></div></div>
+<div class="bar"><div class="wrap"><b>CEARE Lab &middot; Mission Control</b><div class="right"><span class="note">Practice case. All data is fictional.</span><div class="timer" id="timer"><span id="tt">11:00</span><button id="tb" type="button">Start</button></div></div></div></div>
 
 <div class="hero"><div class="wrap">
   <p class="kicker">AI Showcase &middot; November 12, 2026</p>
-  <h1>The 15-Minute Evaluation</h1>
+  <h1>The <em>15-Minute</em> Evaluation</h1>
   <p class="lead">A client needs results from their summer internship program, and they need them today. Your team has one dataset, one mission, and an AI teammate.</p>
 </div></div>
 
@@ -336,6 +351,16 @@ Here is the result:
       else if(fallbackCopy(text)){done();}
     });
   }
+  var left=660, iv=null, tt=document.getElementById("tt"), tb=document.getElementById("tb"), tm=document.getElementById("timer");
+  function pad(n){return (n<10?"0":"")+n;}
+  function draw(){tt.textContent=pad(Math.floor(left/60))+":"+pad(left%60); tm.className=left<=60?"timer low":"timer";}
+  tb.addEventListener("click",function(){
+    if(iv){clearInterval(iv);iv=null;tb.textContent="Resume";return;}
+    if(left<=0){left=660;draw();}
+    tb.textContent="Pause";
+    iv=setInterval(function(){left--;draw();if(left<=0){clearInterval(iv);iv=null;tb.textContent="Restart";}},1000);
+  });
+  draw();
 })();
 </script>
 </body>
