@@ -2,116 +2,193 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mission Control: The 15-Minute Evaluation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 15-Minute Evaluation | CEARE Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f5f6fb;--card:#fff;--ink:#0f172a;--muted:#5b6478;--line:#e4e8f1;--navy:#1e2a5a;--indigo:#3730a3;--indigo-soft:#eef0ff;
---c1:#2563eb;--c1s:#eff5ff;--c2:#7c3aed;--c2s:#f5f0ff;--c3:#059669;--c3s:#ecfdf5;--c4:#d97706;--c4s:#fffbeb;--radius:22px;--shadow:0 1px 2px rgba(15,23,42,.04),0 10px 28px rgba(15,23,42,.07)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:20;background:rgba(245,246,251,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:6px;height:58px;overflow-x:auto}
-nav .brand{font-weight:800;color:var(--navy);margin-right:auto;white-space:nowrap}
-nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px;padding:6px 12px;border-radius:999px;white-space:nowrap}
-nav a:hover{background:var(--indigo-soft);color:var(--indigo)}
-.timer{display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border-radius:999px;padding:6px 8px 6px 14px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
-.timer button{border:0;background:#fff;color:var(--navy);font:inherit;font-size:12px;font-weight:800;border-radius:999px;padding:4px 10px;cursor:pointer}
-.timer.low{background:#dc2626}
-header{padding:52px 0 26px}
-.eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--indigo);background:var(--indigo-soft);padding:6px 12px;border-radius:999px}
-h1{font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:-.03em;margin:16px 0 12px;font-weight:800}
-h1 span{background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:18px;max-width:720px;margin:0}
-section{padding:22px 0}
-h2{font-size:clamp(22px,3.2vw,30px);letter-spacing:-.02em;margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
-.email .meta{display:grid;grid-template-columns:70px 1fr;gap:4px 10px;font-size:14px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:14px}
-.email .meta b{color:var(--ink)}
-.email p{margin:0 0 10px}
-.pill{display:inline-block;background:#fee2e2;color:#b91c1c;font-size:12px;font-weight:800;border-radius:999px;padding:3px 10px;margin-left:6px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.role{padding:20px}
-.role .ico{font-size:28px}
-.role h3{margin:6px 0 4px;font-size:18px}
-.role p{margin:0;color:#334155;font-size:15px}
-.missions{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.m{border-top:6px solid var(--c);padding:22px}
-.m .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c);background:var(--cs);padding:4px 10px;border-radius:999px}
-.m h3{font-size:22px;margin:10px 0 4px;letter-spacing:-.01em}
-.m .for{color:var(--muted);margin:0 0 12px;font-size:15px}
-.m .tool{font-size:14px;margin:0 0 10px}
-.prompt{position:relative;background:#0f172a;color:#e2e8f0;border-radius:14px;padding:46px 16px 16px;font-size:14px;line-height:1.55;white-space:pre-wrap;margin:0 0 10px}
-.copy{position:absolute;top:10px;right:10px;border:0;background:#fff;color:#0f172a;font:inherit;font-size:12px;font-weight:800;border-radius:999px;padding:5px 12px;cursor:pointer}
-.copy.ok{background:#22c55e;color:#fff}
-.plabel{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
-.m1{--c:var(--c1);--cs:var(--c1s)}.m2{--c:var(--c2);--cs:var(--c2s)}.m3{--c:var(--c3);--cs:var(--c3s)}.m4{--c:var(--c4);--cs:var(--c4s)}
-.dl{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;color:#fff;background:var(--indigo);padding:12px 18px;border-radius:14px;box-shadow:var(--shadow)}
-.btn.alt{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-td code{background:var(--indigo-soft);color:var(--indigo);padding:2px 6px;border-radius:6px;font-size:13px}
-.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.rules .card{padding:18px}
-.rules b{display:block;margin-bottom:4px}
-footer{padding:30px 0 60px;color:var(--muted);font-size:13px}
-@media(max-width:820px){.steps,.missions,.rules{grid-template-columns:1fr}}
+  :root{
+    --bg:#f7f7f5; --paper:#ffffff; --ink:#1b2333; --text:#3a4356; --muted:#6b7385; --line:#e3e5ea;
+    --navy:#1f3864; --navy-2:#2b4a80; --tint:#eef2f8;
+    --t1:#2f5d9c; --t2:#6a4c93; --t3:#2f7d5b; --t4:#b0682a;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6}
+  a{color:var(--navy)}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+  /* Top bar */
+  .bar{background:var(--navy);color:#fff}
+  .bar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:52px;gap:12px;flex-wrap:wrap}
+  .bar b{font-weight:600;letter-spacing:.02em}
+  .bar span{font-size:13px;opacity:.85}
+
+  /* Hero */
+  .hero{background:var(--paper);border-bottom:1px solid var(--line);padding:44px 0 36px}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  h1{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-weight:700;color:var(--ink);font-size:44px;line-height:1.1;margin:0 0 12px}
+  .hero p.lead{font-size:18px;max-width:660px;margin:0}
+
+  section{padding:36px 0 8px}
+  h2{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;color:var(--ink);font-size:28px;line-height:1.2;margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 20px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;list-style:none;margin:0;padding:0}
+  .steps li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .num{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:14px;margin-bottom:10px}
+  .steps h3{margin:0 0 4px;font-size:16px;color:var(--ink)}
+  .steps p{margin:0;font-size:14.5px}
+
+  /* Email */
+  .email .head{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px;font-size:14px}
+  .email .head div{margin:2px 0}
+  .email .head span{display:inline-block;width:72px;color:var(--muted)}
+  .email .head b{color:var(--ink);font-weight:600}
+  .urgent{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;letter-spacing:.06em;color:#9b1c1c;border:1px solid #e8b4b4;background:#fdf2f2;border-radius:4px;padding:1px 6px;vertical-align:1px}
+  .email p{margin:0 0 12px;color:var(--ink)}
+  .email p:last-child{margin-bottom:0}
+
+  /* Roles */
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .role{border-top:3px solid var(--navy)}
+  .role h3{margin:0 0 4px;font-size:17px;color:var(--ink)}
+  .role p{margin:0;font-size:15px}
+
+  /* Team selector */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+  .tab{font:inherit;font-size:15px;font-weight:600;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 16px;cursor:pointer;-webkit-appearance:none;appearance:none}
+  .tab:hover{border-color:var(--navy-2)}
+  .tab:focus-visible{outline:3px solid #9db4d9;outline-offset:2px}
+  .tab .tn{color:var(--muted);font-weight:500;margin-right:6px}
+  .tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .tab.active .tn{color:#c9d5ea}
+  .mission{border-left:5px solid var(--c);margin-bottom:16px}
+  .mission .label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin:0 0 4px}
+  .mission h3{font-family:"Source Serif 4",Georgia,serif;font-size:24px;color:var(--ink);margin:0 0 6px}
+  .mission .goal{margin:0 0 18px;font-size:16px}
+  .do{margin:0 0 18px;padding-left:20px}
+  .do li{margin:4px 0}
+  .m1{--c:var(--t1)} .m2{--c:var(--t2)} .m3{--c:var(--t3)} .m4{--c:var(--t4)}
+  .js .mission{display:none}
+  .js .mission.show{display:block}
+
+  /* Prompt box */
+  .pbox{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fbfbfc}
+  .ptop{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px;background:var(--tint);border-bottom:1px solid var(--line)}
+  .ptop span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+  .copy{font:inherit;font-size:13px;font-weight:600;color:#fff;background:var(--navy);border:0;border-radius:6px;padding:6px 14px;cursor:pointer;-webkit-appearance:none;appearance:none}
+  .copy:hover{background:var(--navy-2)}
+  .copy.done{background:var(--t3)}
+  .ptext{margin:0;padding:14px 16px;font-family:inherit;font-size:14.5px;line-height:1.6;color:var(--ink);white-space:pre-wrap;word-wrap:break-word}
+
+  .auditor{border-left:5px solid var(--navy)}
+  .auditor h3{font-family:"Source Serif 4",Georgia,serif;font-size:22px;color:var(--ink);margin:0 0 6px}
+
+  /* Data */
+  .download{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 20px}
+  .dbtn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;color:#fff;background:var(--navy);border-radius:8px;padding:12px 22px}
+  .dbtn:hover{background:var(--navy-2)}
+  .alt{font-size:14px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  td.v{font-family:Consolas,Menlo,"Courier New",monospace;font-size:13.5px;color:var(--navy);white-space:nowrap}
+  .tablewrap{overflow-x:auto}
+
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .notes h3{margin:0 0 4px;font-size:16px;color:var(--ink)}
+  .notes p{margin:0;font-size:14.5px}
+
+  footer{padding:36px 0 48px;color:var(--muted);font-size:13px}
+
+  @media (max-width:860px){
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .roles,.notes{grid-template-columns:1fr}
+    h1{font-size:34px}
+  }
+  @media (max-width:520px){
+    .steps{grid-template-columns:1fr}
+    .tab{flex:1 1 100%;text-align:left}
+  }
 </style>
 </head>
 <body>
-<nav><div class="wrap">
-  <div class="brand">🛰️ Mission Control</div>
-  <a href="#email">The Request</a><a href="#roles">Roles</a><a href="#missions">Missions</a><a href="#data">Data</a>
-  <div class="timer" id="timer"><span id="tt">11:00</span><button id="tb">Start</button></div>
-</div></nav>
+
+<div class="bar"><div class="wrap"><b>CEARE Lab &middot; Mission Control</b><span>Practice case. All data is fictional.</span></div></div>
+
+<div class="hero"><div class="wrap">
+  <p class="kicker">AI Showcase &middot; November 12, 2026</p>
+  <h1>The 15-Minute Evaluation</h1>
+  <p class="lead">A client needs results from their summer internship program, and they need them today. Your team has one dataset, one mission, and an AI teammate.</p>
+</div></div>
 
 <div class="wrap">
-<header>
-  <span class="eyebrow">CEARE Lab · AI Showcase · November 12, 2026</span>
-  <h1>The <span>15-Minute</span> Evaluation</h1>
-  <p class="lead">A client needs results from their summer internship program, fast. Your team has one dataset, one mission, and an AI teammate. Let's see what you can build.</p>
-</header>
 
-<section id="email">
-  <h2>📨 The request</h2>
+<section>
+  <h2>Start here</h2>
+  <p class="sub">Four steps. You have 11 minutes.</p>
+  <ol class="steps">
+    <li><div class="num">1</div><h3>Choose roles</h3><p>Decide who is the Pilot, the Navigator, and the Auditor. Take 30 seconds.</p></li>
+    <li><div class="num">2</div><h3>Get the data</h3><p>The Pilot downloads the Excel file from the Data section below.</p></li>
+    <li><div class="num">3</div><h3>Run your mission</h3><p>Select your team, copy the prompt, and give it to Gemini with the data.</p></li>
+    <li><div class="num">4</div><h3>Check the work</h3><p>The Auditor asks a second AI to review the result before you present.</p></li>
+  </ol>
+</section>
+
+<section>
+  <h2>The client's request</h2>
+  <p class="sub">This email just arrived.</p>
   <div class="card email">
-    <div class="meta"><span>From</span><b>Program Director, Desert Bloom Career Pathways</b><span>To</span><b>CEARE Evaluation Team</b><span>Subject</span><b>Board meeting this afternoon <span class="pill">URGENT</span></b></div>
+    <div class="head">
+      <div><span>From</span><b>Program Director, Desert Bloom Career Pathways</b></div>
+      <div><span>To</span><b>CEARE Evaluation Team</b></div>
+      <div><span>Subject</span><b>Board meeting this afternoon</b><span class="urgent">URGENT</span></div>
+    </div>
     <p>Hello CEARE team,</p>
-    <p>Our board meets this afternoon, and they want to see how our summer internship went. I have attached our data from <b>48 interns</b> across four sites.</p>
-    <p>Could you send us four things: a <b>findings section</b> for our report, a <b>dashboard</b> we can show the board, a short <b>summary in English and Spanish</b> for our families, and <b>ideas for what we should ask next year</b>?</p>
+    <p>Our board meets this afternoon, and they want to see how our summer internship went. I have attached our data from 48 interns across four sites.</p>
+    <p>Could you send us four things: a findings section for our report, a dashboard we can show the board, a short summary in English and Spanish for our families, and ideas for what we should ask next year?</p>
     <p>I know this is short notice. Is 15 minutes possible?</p>
     <p>Thank you!</p>
   </div>
 </section>
 
-<section id="roles">
-  <h2>👥 Your team, your roles</h2>
-  <p class="sub">Decide in the first 30 seconds. Every role matters.</p>
-  <div class="steps">
-    <div class="card role"><div class="ico">🧑‍✈️</div><h3>Pilot</h3><p>Shares their screen, uploads the data, and types into the AI.</p></div>
-    <div class="card role"><div class="ico">🧭</div><h3>Navigator</h3><p>Reads the mission card, and tells the Pilot how to improve the prompt or the output.</p></div>
-    <div class="card role"><div class="ico">🔍</div><h3>Auditor</h3><p>Gives the dataset and the final output to a <b>second AI</b> and asks it to check the work. Reports back to the team.</p></div>
+<section>
+  <h2>Team roles</h2>
+  <p class="sub">Every role matters. If you prefer not to type prompts, choose Navigator or Auditor.</p>
+  <div class="roles">
+    <div class="card role"><h3>Pilot</h3><p>Shares their screen, uploads the data, and types into the AI.</p></div>
+    <div class="card role"><h3>Navigator</h3><p>Reads the mission, and helps the Pilot improve the prompt and the result.</p></div>
+    <div class="card role"><h3>Auditor</h3><p>Gives the data and the final result to a second AI, and asks it to check the work.</p></div>
   </div>
 </section>
 
 <section id="missions">
-  <h2>🎯 The missions</h2>
-  <p class="sub">Your team has <b>one</b> mission. Together, the four teams deliver everything the client asked for.</p>
-  <div class="missions">
+  <h2>Your mission</h2>
+  <p class="sub">Select your team. Each team creates one deliverable. Together, the four teams answer the whole request.</p>
 
-    <div class="card m m1">
-      <span class="tag">Team 1</span>
-      <h3>📝 The Report Writers</h3>
-      <p class="for">Write the Findings section of the evaluation report.</p>
-      <p class="tool"><b>Tool:</b> Gemini (upload the Excel file)</p>
-      <div class="plabel">Pilot prompt</div>
-      <div class="prompt"><button class="copy">Copy</button>You are an evaluation report writer. Using the attached data from the Desert Bloom Career Pathways summer internship, write the Findings section of an evaluation report for the program's board.
+  <div class="tabs" role="tablist" aria-label="Choose your team">
+    <button class="tab active" role="tab" data-m="1" aria-selected="true"><span class="tn">Team 1</span>Report Writers</button>
+    <button class="tab" role="tab" data-m="2" aria-selected="false"><span class="tn">Team 2</span>Dashboard Builders</button>
+    <button class="tab" role="tab" data-m="3" aria-selected="false"><span class="tn">Team 3</span>Community Voice</button>
+    <button class="tab" role="tab" data-m="4" aria-selected="false"><span class="tn">Team 4</span>Next Round</button>
+  </div>
+
+  <div class="card mission m1 show" id="m1">
+    <p class="label">Team 1</p>
+    <h3>The Report Writers</h3>
+    <p class="goal">Write the Findings section of the evaluation report.</p>
+    <ol class="do">
+      <li>Open <a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a> and start a new chat.</li>
+      <li>Upload the Excel file.</li>
+      <li>Copy the prompt below, paste it, and send.</li>
+      <li>Improve the result together until you are happy with it.</li>
+    </ol>
+    <div class="pbox"><div class="ptop"><span>Pilot prompt</span><button class="copy" type="button">Copy</button></div>
+<pre class="ptext">You are an evaluation report writer. Using the attached data from the Desert Bloom Career Pathways summer internship, write the Findings section of an evaluation report for the program's board.
 
 Use these headings:
 4.1 Participants
@@ -120,111 +197,146 @@ Use these headings:
 4.4 Job Offers
 4.5 What Interns Said
 
-Include numbers and clear, professional sentences. About 400 words.</div>
-    </div>
+Include numbers and clear, professional sentences. About 400 words.</pre></div>
+  </div>
 
-    <div class="card m m2">
-      <span class="tag">Team 2</span>
-      <h3>📊 The Dashboard Builders</h3>
-      <p class="for">Build an interactive dashboard the board can explore.</p>
-      <p class="tool"><b>Tool:</b> Gemini → Tools → <b>Canvas</b> (upload the Excel file)</p>
-      <div class="plabel">Pilot prompt</div>
-      <div class="prompt"><button class="copy">Copy</button>Using the attached data from the Desert Bloom Career Pathways summer internship, build an interactive dashboard for the program's board.
+  <div class="card mission m2" id="m2">
+    <p class="label">Team 2</p>
+    <h3>The Dashboard Builders</h3>
+    <p class="goal">Build an interactive dashboard that the board can explore.</p>
+    <ol class="do">
+      <li>Open <a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a> and start a new chat.</li>
+      <li>Click <b>Tools</b>, then choose <b>Canvas</b>.</li>
+      <li>Upload the Excel file.</li>
+      <li>Copy the prompt below, paste it, and send. Open the preview to see your dashboard.</li>
+    </ol>
+    <div class="pbox"><div class="ptop"><span>Pilot prompt</span><button class="copy" type="button">Copy</button></div>
+<pre class="ptext">Using the attached data from the Desert Bloom Career Pathways summer internship, build an interactive dashboard for the program's board.
 
 Show:
 - Key numbers at the top: number of interns, average career self-efficacy before and after, and job offer rate
 - A chart comparing the four sites
 - Three highlighted quotes from interns
 
-Make it modern, colorful, and easy to read.</div>
-    </div>
+Make it modern, colorful, and easy to read.</pre></div>
+  </div>
 
-    <div class="card m m3">
-      <span class="tag">Team 3</span>
-      <h3>🗣️ The Community Voice</h3>
-      <p class="for">Turn the interns' comments into a summary for families.</p>
-      <p class="tool"><b>Tool:</b> Gemini (upload the Excel file)</p>
-      <div class="plabel">Pilot prompt</div>
-      <div class="prompt"><button class="copy">Copy</button>Read the Final_Comment column in the attached data from the Desert Bloom Career Pathways summer internship.
+  <div class="card mission m3" id="m3">
+    <p class="label">Team 3</p>
+    <h3>The Community Voice</h3>
+    <p class="goal">Turn the interns' comments into a summary for families.</p>
+    <ol class="do">
+      <li>Open <a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a> and start a new chat.</li>
+      <li>Upload the Excel file.</li>
+      <li>Copy the prompt below, paste it, and send.</li>
+      <li>Improve the result together until you are happy with it.</li>
+    </ol>
+    <div class="pbox"><div class="ptop"><span>Pilot prompt</span><button class="copy" type="button">Copy</button></div>
+<pre class="ptext">Read the Final_Comment column in the attached data from the Desert Bloom Career Pathways summer internship.
 
 1. Group the comments into 4 to 5 themes and count how many comments fit each theme.
 2. Choose one powerful quote for each theme.
-3. Write a warm, one-page summary for families and community members, in both English and Spanish, that shares what the interns experienced.</div>
-    </div>
-
-    <div class="card m m4">
-      <span class="tag">Team 4</span>
-      <h3>🔭 The Next Round</h3>
-      <p class="for">Plan what the program should ask next year.</p>
-      <p class="tool"><b>Tool:</b> Gemini (upload the Excel file)</p>
-      <div class="plabel">Pilot prompt</div>
-      <div class="prompt"><button class="copy">Copy</button>Using the attached data from the Desert Bloom Career Pathways summer internship:
-
-1. Tell me which site and which parts of the program worked best, and why.
-2. Based on that, design 6 survey questions and 4 interview questions for next year's evaluation that will help us understand what made the program successful.</div>
-    </div>
+3. Write a warm, one-page summary for families and community members, in both English and Spanish, that shares what the interns experienced.</pre></div>
   </div>
 
-  <div class="card" style="margin-top:18px;border-top:6px solid #0f172a">
-    <span class="tag" style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:#f1f5f9;padding:4px 10px;border-radius:999px">All teams</span>
-    <h3 style="margin:10px 0 4px">🔍 Auditor prompt</h3>
-    <p class="sub" style="margin:0 0 10px">Use a <b>different</b> AI from the Pilot (for example, the UA GenAI tool, ChatGPT, or Claude). Attach the same Excel file, then paste the Pilot's output below this prompt.</p>
-    <div class="prompt"><button class="copy">Copy</button>I am attaching a dataset and an AI-generated output that was created from it. Please review the output and tell me if anything should be corrected before we send it to our client.
+  <div class="card mission m4" id="m4">
+    <p class="label">Team 4</p>
+    <h3>The Next Round</h3>
+    <p class="goal">Plan what the program should ask in next year's evaluation.</p>
+    <ol class="do">
+      <li>Open <a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a> and start a new chat.</li>
+      <li>Upload the Excel file.</li>
+      <li>Copy the prompt below, paste it, and send.</li>
+      <li>Improve the result together until you are happy with it.</li>
+    </ol>
+    <div class="pbox"><div class="ptop"><span>Pilot prompt</span><button class="copy" type="button">Copy</button></div>
+<pre class="ptext">Using the attached data from the Desert Bloom Career Pathways summer internship:
 
-[Paste the Pilot's output here]</div>
+1. Tell me which site and which parts of the program worked best, and why.
+2. Based on that, design 6 survey questions and 4 interview questions for next year's evaluation that will help us understand what made the program successful.</pre></div>
+  </div>
+
+  <div class="card auditor">
+    <p class="label" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin:0 0 4px">All teams</p>
+    <h3>For the Auditor</h3>
+    <p class="goal" style="margin:0 0 18px">Use a different AI from the Pilot, for example the UA GenAI tool, ChatGPT, or Claude. Upload the same Excel file, paste the prompt, then paste the Pilot's result underneath.</p>
+    <div class="pbox"><div class="ptop"><span>Auditor prompt</span><button class="copy" type="button">Copy</button></div>
+<pre class="ptext">I am attaching a dataset and a result that another AI created from it. Please review the result and tell me if anything should be corrected before we send it to our client.
+
+Here is the result:
+</pre></div>
   </div>
 </section>
 
 <section id="data">
-  <h2>📁 The data</h2>
-  <p class="sub">Download one file and upload it to your AI. Practice data only: the program and all interns are fictional.</p>
-  <div class="dl" style="margin-bottom:18px">
-    <a class="btn" href="DesertBloom_Practice_Data.xlsx" download>⬇️ Excel file (.xlsx)</a>
-    <a class="btn alt" href="DesertBloom_Practice_Data.csv" download>⬇️ CSV file</a>
+  <h2>The data</h2>
+  <p class="sub">Practice data. The program and all interns are fictional.</p>
+  <div class="download">
+    <a class="dbtn" href="DesertBloom_Practice_Data.xlsx" download>Download the data (Excel)</a>
+    <span class="alt">If your AI tool does not accept Excel files, use the <a href="DesertBloom_Practice_Data.csv" download>CSV version</a>.</span>
   </div>
   <div class="card">
-    <p style="margin:0 0 12px"><b>About the program.</b> Desert Bloom Career Pathways is a 10-week paid summer internship for community college students in Southern Arizona, with placements in health care, agriculture, education, and technology. Interns met regularly with a workplace mentor. They completed a survey before and after the internship.</p>
-    <table>
-      <tr><th>Variable</th><th>What it means</th><th>Values</th></tr>
-      <tr><td><code>Intern_ID</code></td><td>Intern identifier</td><td>DB-###</td></tr>
-      <tr><td><code>Site</code></td><td>Internship site</td><td>Tucson, Nogales, Casa Grande, Bisbee</td></tr>
-      <tr><td><code>Industry</code></td><td>Internship field</td><td>Health Care, Agriculture, Education, Technology</td></tr>
-      <tr><td><code>First_Gen</code> · <code>Pell_Eligible</code></td><td>First-generation college student · Pell Grant eligible</td><td>Yes / No</td></tr>
-      <tr><td><code>Home_Language</code></td><td>Language(s) spoken at home</td><td>English, Spanish, English and Spanish</td></tr>
-      <tr><td><code>Hours_Completed</code></td><td>Internship hours completed</td><td>Out of 300</td></tr>
-      <tr><td><code>Mentor_Meetings</code></td><td>Meetings with workplace mentor</td><td>Count</td></tr>
-      <tr><td><code>Career_SelfEfficacy_Pre</code> · <code>_Post</code></td><td>Confidence in career skills, before and after</td><td>1 (low) to 5 (high)</td></tr>
-      <tr><td><code>Belonging_Industry_Post</code></td><td>Sense of belonging in the industry, after</td><td>1 (low) to 5 (high)</td></tr>
-      <tr><td><code>Job_Offer</code></td><td>Received a job offer by the end</td><td>Yes / No</td></tr>
-      <tr><td><code>Would_Recommend</code></td><td>Would recommend the program</td><td>1 (no) to 5 (definitely)</td></tr>
-      <tr><td><code>Final_Comment</code></td><td>"What would you like to share about your internship?"</td><td>Open text (English or Spanish)</td></tr>
-    </table>
+    <p style="margin:0 0 14px;color:var(--ink)"><b>About the program.</b> Desert Bloom Career Pathways is a 10-week paid summer internship for community college students in Southern Arizona, with placements in health care, agriculture, education, and technology. Each intern met with a workplace mentor and completed a survey before and after the internship.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Variable</th><th>Meaning</th><th>Values</th></tr>
+      <tr><td class="v">Intern_ID</td><td>Intern identifier</td><td>DB-001 and up</td></tr>
+      <tr><td class="v">Site</td><td>Internship site</td><td>Tucson, Nogales, Casa Grande, Bisbee</td></tr>
+      <tr><td class="v">Industry</td><td>Internship field</td><td>Health Care, Agriculture, Education, Technology</td></tr>
+      <tr><td class="v">First_Gen</td><td>First-generation college student</td><td>Yes, No</td></tr>
+      <tr><td class="v">Pell_Eligible</td><td>Eligible for a Pell Grant</td><td>Yes, No</td></tr>
+      <tr><td class="v">Home_Language</td><td>Language spoken at home</td><td>English, Spanish, English and Spanish</td></tr>
+      <tr><td class="v">Hours_Completed</td><td>Internship hours completed</td><td>Out of 300</td></tr>
+      <tr><td class="v">Mentor_Meetings</td><td>Meetings with the workplace mentor</td><td>Number of meetings</td></tr>
+      <tr><td class="v">Career_SelfEfficacy_Pre</td><td>Confidence in career skills, before</td><td>1 (low) to 5 (high)</td></tr>
+      <tr><td class="v">Career_SelfEfficacy_Post</td><td>Confidence in career skills, after</td><td>1 (low) to 5 (high)</td></tr>
+      <tr><td class="v">Belonging_Industry_Post</td><td>Sense of belonging in the industry, after</td><td>1 (low) to 5 (high)</td></tr>
+      <tr><td class="v">Job_Offer</td><td>Received a job offer by the end</td><td>Yes, No</td></tr>
+      <tr><td class="v">Would_Recommend</td><td>Would recommend the program</td><td>1 (no) to 5 (definitely)</td></tr>
+      <tr><td class="v">Final_Comment</td><td>What would you like to share about your internship?</td><td>Written answer, in English or Spanish</td></tr>
+    </table></div>
   </div>
 </section>
 
 <section>
-  <div class="rules">
-    <div class="card"><b>⏱️ 11 minutes</b>Watch for time reminders from Mission Control. At the end, one person shares the result in 60 seconds.</div>
-    <div class="card"><b>🔒 Practice data</b>Everything here is fictional, so any AI tool is fine today. For real CEARE data, follow our lab's AI data rules.</div>
-    <div class="card"><b>🚀 Done early?</b>Ask your AI to improve the output for a different audience, then let your Auditor check it again.</div>
+  <div class="notes">
+    <div class="card"><h3>Timing</h3><p>You have 11 minutes. Watch for short reminders from Mission Control. At the end, one person presents your result in 60 seconds.</p></div>
+    <div class="card"><h3>Data rules</h3><p>Everything here is fictional, so any AI tool is fine today. For real CEARE data, please follow our lab's AI data guidelines.</p></div>
+    <div class="card"><h3>Finished early?</h3><p>Ask the AI to adapt your result for a different audience, and let your Auditor check it again.</p></div>
   </div>
 </section>
 
-<footer>Designed by Thrinath Dharavath for the CEARE Lab, University of Arizona. Desert Bloom Career Pathways is a fictional program created for training.</footer>
+<footer>Created by Thrinath Dharavath for the CEARE Lab, University of Arizona. Desert Bloom Career Pathways is a fictional program created for training purposes.</footer>
 </div>
 
 <script>
-document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
-  const t=b.parentElement.innerText.replace(/^Copy\s*/,'').replace(/^Copied!\s*/,'');
-  const done=()=>{b.textContent='Copied!';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1600)};
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done).catch(()=>fallback(t,done))}else{fallback(t,done)}
-}));
-function fallback(t,done){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();done()}
-let left=660,iv=null;const tt=document.getElementById('tt'),tb=document.getElementById('tb'),tm=document.getElementById('timer');
-function draw(){tt.textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');tm.classList.toggle('low',left<=60)}
-tb.addEventListener('click',()=>{if(iv){clearInterval(iv);iv=null;tb.textContent='Start';return}
-  if(left<=0)left=660;tb.textContent='Pause';iv=setInterval(()=>{left--;draw();if(left<=0){clearInterval(iv);iv=null;tb.textContent='Reset'}},1000)});
-draw();
+(function(){
+  var root=document.documentElement; root.className+=" js";
+  var tabs=document.querySelectorAll(".tab");
+  for(var i=0;i<tabs.length;i++){
+    tabs[i].addEventListener("click",function(){
+      var m=this.getAttribute("data-m");
+      for(var j=0;j<tabs.length;j++){tabs[j].className="tab";tabs[j].setAttribute("aria-selected","false");}
+      this.className="tab active";this.setAttribute("aria-selected","true");
+      var ms=document.querySelectorAll(".mission");
+      for(var k=0;k<ms.length;k++){ms[k].className=ms[k].className.replace(" show","");}
+      var t=document.getElementById("m"+m); t.className+=" show";
+    });
+  }
+  function fallbackCopy(text){
+    var ta=document.createElement("textarea"); ta.value=text; ta.setAttribute("readonly","");
+    ta.style.position="fixed"; ta.style.top="-1000px"; document.body.appendChild(ta); ta.select();
+    var ok=false; try{ok=document.execCommand("copy");}catch(e){} document.body.removeChild(ta); return ok;
+  }
+  var copies=document.querySelectorAll(".copy");
+  for(var c=0;c<copies.length;c++){
+    copies[c].addEventListener("click",function(){
+      var btn=this, text=btn.parentNode.parentNode.querySelector(".ptext").textContent;
+      function done(){btn.textContent="Copied";btn.className="copy done";setTimeout(function(){btn.textContent="Copy";btn.className="copy";},1800);}
+      if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done,function(){if(fallbackCopy(text))done();});}
+      else if(fallbackCopy(text)){done();}
+    });
+  }
+})();
 </script>
 </body>
 </html>
