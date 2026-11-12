@@ -1,0 +1,50 @@
+Intern_ID,Site,Industry,First_Gen,Pell_Eligible,Home_Language,Hours_Completed,Mentor_Meetings,Career_SelfEfficacy_Pre,Career_SelfEfficacy_Post,Belonging_Industry_Post,Job_Offer,Would_Recommend,Final_Comment
+DB-001,Tucson,Health Care,No,No,English,273,11,3.2,3.6,4.2,No,4,The drive was over an hour each way and gas was expensive.
+DB-002,Tucson,Technology,Yes,No,English,261,10,3.4,4.0,3.5,No,4,Loved spending two hours on the bus every day. Totally worth it.
+DB-003,Nogales,Agriculture,No,No,English and Spanish,300,9,4.3,4.6,3.2,Yes,4,Now I want to transfer and finish a bachelor's degree in agriculture.
+DB-004,Casa Grande,Agriculture,No,Yes,English and Spanish,288,7,3.8,4.6,3.1,No,5,"Mi mentor, el Sr. Ortega de la granja en Casa Grande, siempre tuvo paciencia conmigo."
+DB-005,Casa Grande,Health Care,Yes,Yes,English,288,5,3.4,4.1,3.8,Yes,4,Aprendí a usar programas que nunca había usado antes.
+DB-006,Nogales,Health Care,No,Yes,English and Spanish,240,10,3.2,3.9,5.0,No,5,My mentor Ms. Valdez at the Nogales clinic changed my life. She even helped me with my FAFSA.
+DB-007,Tucson,Agriculture,No,No,English,238,11,3.6,3.9,3.0,No,4,I learned how to talk to customers and how to write a professional email.
+DB-008,Nogales,Agriculture,Yes,No,Spanish,300,10,4.0,4.2,4.0,No,3,Learned more in ten weeks than in a whole semester of classes.
+DB-009,Tucson,Education,Yes,Yes,English and Spanish,290,8,3.3,3.1,3.0,No,5,
+DB-010,Casa Grande,Health Care,No,No,English and Spanish,297,12,3.9,3.7,3.9,Yes,4,
+DB-011,Nogales,Agriculture,Yes,Yes,English and Spanish,267,7,1.9,2.7,3.0,No,4,Please pay us every two weeks instead of once a month.
+DB-012,Bisbee,Health Care,Yes,No,English,297,9,3.6,5.0,3.2,Yes,4,
+DB-013,Casa Grande,Health Care,No,No,English,298,8,1.8,2.7,5.0,No,4,
+DB-014,Nogales,Agriculture,Yes,No,English,300,8,2.9,3.5,4.1,No,4,
+DB-015,Tucson,Agriculture,Yes,Yes,English and Spanish,230,8,2.9,4.0,4.3,Yes,5,My supervisor let me lead a small project. I did not know I could do that.
+DB-016,Casa Grande,Education,Yes,Yes,English,272,10,3.1,3.8,4.9,Yes,4,
+DB-017,Nogales,Agriculture,Yes,Yes,Spanish,224,10,3.0,3.5,4.5,No,4,Me siento más segura para buscar trabajo en mi área.
+DB-018,Casa Grande,Education,Yes,No,English and Spanish,253,7,4.2,4.0,4.4,No,4,Mi familia está muy orgullosa de mí.
+DB-019,Tucson,Health Care,Yes,Yes,English,277,9,2.3,2.4,3.2,No,5,
+DB-020,Tucson,Technology,Yes,Yes,English,252,10,2.8,3.4,4.9,No,5,The weekly check-ins kept me on track.
+DB-021,Nogales,Health Care,No,No,English,283,7,2.9,3.3,3.9,No,4,Some weeks there was not enough work for me to do.
+DB-022,Tucson,Health Care,Yes,Yes,English and Spanish,283,10,3.3,4.5,2.9,No,5,
+DB-023,Nogales,Agriculture,Yes,Yes,Spanish,243,6,3.7,4.3,4.0,No,5,
+DB-024,Tucson,Education,Yes,Yes,English,282,6,3.6,3.3,3.1,No,4,Aprendí a usar programas que nunca había usado antes.
+DB-025,Nogales,Education,No,Yes,English,245,12,4.6,5.0,4.9,Yes,3,Connect us with other interns so we do not feel alone.
+DB-026,Casa Grande,Health Care,Yes,Yes,English,280,6,3.4,3.5,2.3,No,4,El transporte fue muy difícil porque no tengo carro.
+DB-027,Tucson,Technology,Yes,No,English,258,8,2.7,3.6,4.7,No,4,Now I want to transfer and finish a bachelor's degree in agriculture.
+DB-028,Casa Grande,Technology,Yes,No,English and Spanish,278,11,2.9,3.6,5.0,No,4,"I had to cut hours at my other job, which was hard for my family."
+DB-029,Casa Grande,Agriculture,No,Yes,Spanish,300,8,3.0,3.8,3.4,No,5,Me siento más segura para buscar trabajo en mi área.
+DB-030,Tucson,Health Care,Yes,Yes,English,239,7,2.4,2.6,3.5,No,5,I learned how to talk to customers and how to write a professional email.
+DB-031,Tucson,Education,Yes,No,English and Spanish,290,2,3.6,44.0,3.5,No,4,I got a job offer at the end and I accepted it.
+DB-032,Tucson,Health Care,Yes,No,English,259,8,3.1,3.3,4.3,No,3,
+DB-033,Tucson,Agriculture,Yes,No,English and Spanish,229,8,3.8,4.1,4.4,No,4,More help with resumes before the internship starts would be good.
+DB-034,Bisbee,Agriculture,Yes,Yes,English and Spanish,290,3,2.2,3.5,3.0,Yes,4,Learned more in ten weeks than in a whole semester of classes.
+DB-035,Casa Grande,Health Care,No,Yes,English,248,7,2.4,3.7,4.0,Yes,5,Sería bueno tener las orientaciones también en español.
+DB-036,Nogales,Health Care,Yes,Yes,English and Spanish,227,10,3.1,3.4,3.9,No,4,My supervisor let me lead a small project. I did not know I could do that.
+DB-037,Bisbee,Education,Yes,Yes,English,296,12,2.9,4.5,4.1,Yes,3,
+DB-038,Tucson,Health Care,No,No,English,295,7,3.9,4.1,4.4,No,4,I finally know what a job in health care actually looks like day to day.
+DB-039,Casa Grande,Health Care,Yes,No,English and Spanish,246,11,2.8,3.6,4.1,Yes,5,I finally know what a job in health care actually looks like day to day.
+DB-040,Tucson,Agriculture,Yes,Yes,English,300,12,3.2,2.8,3.7,No,4,
+DB-041,Nogales,Education,No,Yes,English and Spanish,260,5,4.1,4.3,3.5,Yes,4,
+DB-003,Nogales,Agriculture,No,No,English and Spanish,300,9,4.3,4.6,3.2,Yes,4,Now I want to transfer and finish a bachelor's degree in agriculture.
+DB-042,Casa Grande,Agriculture,Yes,No,English and Spanish,277,9,2.7,2.9,3.8,No,4,
+DB-043,Nogales,Health Care,Yes,Yes,Spanish,300,5,2.8,3.3,3.3,No,4,
+DB-044,Nogales,Agriculture,Yes,Yes,Spanish,241,8,2.6,3.1,5.0,Yes,4,Mi familia está muy orgullosa de mí.
+DB-045,Tucson,Education,No,No,English and Spanish,249,7,4.1,4.3,3.5,Yes,5,I got a job offer at the end and I accepted it.
+DB-046,Nogales,Agriculture,Yes,Yes,English and Spanish,241,8,2.9,3.7,4.2,No,5,The weekly check-ins kept me on track.
+DB-047,Tucson,Agriculture,Yes,Yes,English and Spanish,225,10,3.5,3.7,4.4,No,4,
+DB-048,Bisbee,Health Care,Yes,Yes,English,283,7,2.2,3.7,3.8,Yes,4,
